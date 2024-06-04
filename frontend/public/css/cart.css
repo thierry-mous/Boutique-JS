@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.allbox {
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.box1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.box2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.box2 img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.box2 div {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.box2 form {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.box3 {
+    padding: 20px;
+}
+
+.order {
+    text-align: center;
+}
+
+.order h1 {
+    margin-bottom: 20px;
+}
+
+.order div {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.order button {
+    background-color: #9b0a0a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.order button:hover {
+    background-color: #0056b3;
+}
+
+
+.btn-delete{
+    background-color: #9b0a0a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 30px;
+}
+
+.btn-cart{ background-color: #9b0a0a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 30px;}

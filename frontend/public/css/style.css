@@ -1,0 +1,269 @@
+body{
+    margin: 0;
+}
+
+
+.header-logo{
+    background-color: #B3B3B3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img{
+    width: 400px ;
+    height: 90px;
+}
+
+.information img{
+    width: 68px;
+    height: 68px;
+}
+
+.category{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #26187C;
+    height: 75px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.reduc{
+    background-color: #E20C0C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25Px;
+}
+
+.welcome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+
+.american-league{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.title-am{
+    color: #E20C0C;
+    height: 75px;
+}
+
+.team-am{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.national-league{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.title-na{
+    color: #26187C;
+    height: 75px;
+}
+
+.team-na{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+
+.jersey{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #26187C;
+    color: white;
+    width: 100%;
+    margin-bottom: 30px ;
+}
+
+.img1{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+}
+
+.img1 img{
+    width: 100%;
+    height: 100%;
+}
+
+.img2{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.img2 img{
+    width: 500px;
+    height: 500;
+}
+
+footer{
+    background-color:#B3B3B3 ;
+}
+
+.real-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100px;
+}
+
+.left-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.right-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.footer-logo img{
+    height: 50px;
+    width: 200px;
+}
+
+.team-am img{
+    width: 200px;
+    height: 200px;
+}
+
+.team-na img{
+    width: 200px;
+    height: 200px;
+}
+
+/*article*/
+
+.article{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.article img{
+    width: 500px;
+    height: 500px;
+}
+
+.buy{
+    display: flex;
+    flex-direction: column;
+}
+
+.stock{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    color: green;
+}
+
+.stock button{
+    background-color: #9b0a0a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.box{
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.size{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.taille{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.taille button{
+    background-color: #26187C;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.t-size{
+    display: flex;
+    justify-content: start;
+}
+
+.quantity{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.carousel img{
+    width: 100%;
+    height: 100%;
+}
+
+.button button{
+    background-color: #9b0a0a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+
+.icon{
+    width: 300px;
+}

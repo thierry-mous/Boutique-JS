@@ -1,0 +1,39 @@
+.box1{
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.box1 h3{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.box2{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.box2 button{
+    background-color: #9b0a0a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+
+.allbox{
+    width: 100%;
+    display: flex;
+   justify-content: center;
+    align-items: center;
+}
