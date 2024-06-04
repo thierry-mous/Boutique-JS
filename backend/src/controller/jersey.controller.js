@@ -4,7 +4,7 @@ class ControllerJersey {
     static getJersey(req, res) {
         const id_jersey = req.query.id_jersey;
 
-        Teams.getJersey(id_jersey, (err, data) => {
+        Jersey.getJerseys(id_jersey, (err, data) => {
             if (err) {
                 res.status(500).send({
                     message: err.message || 'Some error occurred while retrieving jersey.'
@@ -16,4 +16,4 @@ class ControllerJersey {
     }
 }
 
-module.exports = ControllerTeams;
+module.exports = ControllerJersey;

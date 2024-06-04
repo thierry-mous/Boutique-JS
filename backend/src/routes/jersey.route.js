@@ -1,9 +1,9 @@
 module.exports = (app) => {
-    const teams = require('../controller/jersey.controller.js');
+    const jersey = require('../controller/jersey.controller.js');
 
     let routeur = require('express').Router();
 
-    routeur.get('/jerseys', teams.getTeams);
+    routeur.get('/jerseys', jersey.getJersey);
 
     app.use('/api', routeur);
 }

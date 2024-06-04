@@ -5,12 +5,10 @@
     <title>Document</title>
 </head>
 <body>
-  <% Users.forEach(user => { %>
-    <h1><%= user.name %></h1>
-    <p><%= user.job %></p>
-    <% if(user.age > 18) { %>
-    <p><%= user.age %></p>
-    <% } %>
- <% }); %>
+<h1>Liste perso</h1>
+<% characters.forEach(chara => { %>
+    <p><%= chara.name %></p>
+
+<%}) %>
 </body>
 </html>

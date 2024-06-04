@@ -4,9 +4,12 @@ class ModeleJersey {
     constructor(jersey) {
         this.id_jersey = jersey.id_jersey;
         this.name = jersey.name;
-        this.city = jersey.city;
+        this.price = jersey.price;
         this.description = jersey.description;
         this.image = jersey.image;
+        this.details = jersey.details;
+        this.gender = jersey.gender;
+        this.color = jersey.color;
     }
 
     static getJerseys(id_jersey, result) {
@@ -28,4 +31,4 @@ class ModeleJersey {
     }
 }
 
-module.exports = Modelejersey;
+module.exports = ModeleJersey;
