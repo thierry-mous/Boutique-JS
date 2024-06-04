@@ -5,6 +5,8 @@ module.exports = (app) => {
 
     routeur.get('/jerseys', jersey.getJersey);
 
+    routeur.get('/jerseys/:id', jersey.getJerseyById);
+
     app.use('/api', routeur);
 }
 

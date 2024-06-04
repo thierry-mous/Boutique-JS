@@ -15,8 +15,13 @@ app.use('/public/', express.static(join(__dirname, 'public')));
 
 //routes
 
-app.get('/', (req, res) => {
-    res.render('index');
+app.get('/', async (req, res) => {
+    await axios.get('http://localhost:3000/api/teams').then(response => {
+    res.render('index', {teams: response.data});
+    res.render('index', {teams: response.data});
+    }).catch(error => {
+        res.render('erreur', {message : error.message, code : error.response.status});
+    });
 });
 
 app.get('/nocart', (req, res) => {
@@ -27,8 +32,12 @@ app.get('/cart', (req, res) => {
     res.render('cart');
 });
 
-app.get ('/article', (req, res) => {
-    res.render('article');
+app.get ('/article', async (req, res) => {
+    await axios.get('http://localhost:3000/api/jerseys').then(response => {
+    res.render('article', {jerseys: response.data});
+    }).catch(error => {
+        res.render('erreur', {message : error.message, code : error.response.status});
+    });
 });
 
 app.get ('/category', async (req, res) => {
