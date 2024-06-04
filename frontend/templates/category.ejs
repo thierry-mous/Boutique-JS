@@ -19,10 +19,10 @@
             </div>
         </div>
         <div class="category">
-            <a href=""> Shop by team</a>
-            <a href="">Men</a>
-            <a href="">Women</a>
-            <a href="">Kid</a>
+            <a href="/category"> Shop by team</a>
+            <a href="/category">Men</a>
+            <a href="/category">Women</a>
+            <a href="/category">Kid</a>
         </div>
         <div class="reduc">
             <a href="">VIEW ALL JERSEY up to -50%</a>
@@ -34,9 +34,11 @@
                 <div class="jersey-container">
                     <a href="/article">
                         <div class="jersey-piece">
-                            <p>astro jersey</p>
-                        <img src="/public/img/astro-jersey-men2.png" alt="Product Image">
-                        <p>129,99€</p>
+                            <% jerseys.forEach(jersey => { %>
+                                <p><%= jersey.name %></p>
+                                <p><%= jersey.price %></p>
+                                <img src="http://localhost:3000/public/img/<%= jersey.image %>" alt="test">
+                            <%}) %>
                     </div>
                     </a>
                 </div>
