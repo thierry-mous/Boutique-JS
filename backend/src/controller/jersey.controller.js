@@ -20,7 +20,7 @@ class ControllerJersey {
             return res.status(400).send({response:400, message: 'Invalid id'});
         }
         Jersey.getJerseysById(id).then(data => {
-            res.json({response: 200, data});
+            res.json({response: 200, data: data});
         }).catch(err => {
             if (err.message == 'not_found') {
                 return res.status(404).send({response: 404, message: 'Jersey not found'});

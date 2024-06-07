@@ -29,7 +29,7 @@ class ModeleJersey {
             result(null, res);
         });
     }
-    static getJerseysByIdTeam(id, result) {
+    static getJerseysByIdTeam(id) {
         return new Promise((resolve, reject) => {
             db.query(`SELECT * FROM jersey WHERE id_team = ${id}`, (err, res) => {
                 if (err) {
@@ -43,18 +43,6 @@ class ModeleJersey {
                 }
                 reject({ message: 'not_found' });
             });
-        });
-        db.query(`SELECT * FROM jersey WHERE id_jersey = ${id}`, (err, res) => {
-            if (err) {
-                console.log(err);
-                result(err, null);
-                return;
-            }
-            if (res.length) {
-                result(null, res[0]);
-                return;
-            }
-            result({ kind: 'not_found' }, null);
         });
     }
 static getJerseysById(id, result) {

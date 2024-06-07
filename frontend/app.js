@@ -25,8 +25,9 @@ app.get('/', async (req, res) => {
 
 app.get('/category/:teamId', async (req, res) => {
     const teamId = req.params.teamId;
-    await axios.get('http://localhost:3000/api/jerseys').then(response => {
-       res.render('category', {jerseys: response.data});
+    await axios.get(`http://localhost:3000/api/teams/${teamId}`).then(response => {
+        console.log(response.data.data.jerseys);
+       res.render('category', {jerseys: response.data.data.jerseys, team: response.data.data.team});
     }).catch(error => {
         res.render('erreur', {message : error.message, code : error.response.status});
     });
