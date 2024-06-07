@@ -48,9 +48,9 @@
                 <p>National League Teams</p>
             </div>
             <div class="team-na">
-                <a href="/category"><img src="/public/img/padres-logo.png" alt=""></a>
-                <a href="/category"><img src="/public/img/yankees-logo.png" alt=""></a>
-                <a href="/category"><img src="/public/img/phillies-logo.png" alt=""></a>
+                <% teams.forEach(team => { %>
+                    <a href="/category/<%= team.id_team%>"><img src="http://localhost:3000/public/img/<%= team.image %>" alt="logo équipe"></a>
+                <% }) %>
             </div>
         </div>
         <div class="jersey">
