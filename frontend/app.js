@@ -23,14 +23,10 @@ app.get('/', async (req, res) => {
     });
 });
 
-app.get('/category/:teamId', async (req, res) => {
-    const teamId = req.params.teamId;
-    await axios.get(`http://localhost:3000/api/teams/${teamId}`).then(response => {
-        console.log(response.data.data.jerseys);
-       res.render('category', {jerseys: response.data.data.jerseys, team: response.data.data.team});
-    }).catch(error => {
-        res.render('erreur', {message : error.message, code : error.response.status});
-    });
+
+
+app.get('/erreur', (req, res) => {
+    res.render('erreur');
 });
 
 app.get('/nocart', (req, res) => {
@@ -41,13 +37,24 @@ app.get('/cart', (req, res) => {
     res.render('cart');
 });
 
-app.get ('/article', async (req, res) => {
+app.get('/article/:jerseyId', async (req, res) => {
+    const jerseyId = req.params.jerseyId;
+    await axios.get(`http://localhost:3000/api/jerseys/${jerseyId}`).then(response => {
+        console.log(response.data.data);
+        res.render('article', { jersey: response.data.data });
+    }).catch(error => {
+        res.render('erreur', { message: error.message, code: error.response.status });
+    });
+});
+
+app.get('/article',  async (req, res) => {
     await axios.get('http://localhost:3000/api/jerseys').then(response => {
-    res.render('article', {jerseys: response.data});
+        res.render('article', {jerseys: response.data});
     }).catch(error => {
         res.render('erreur', {message : error.message, code : error.response.status});
     });
 });
+
 
 app.get ('/category', async (req, res) => {
     await axios.get('http://localhost:3000/api/jerseys').then(response => {
@@ -55,7 +62,16 @@ app.get ('/category', async (req, res) => {
     }).catch(error => {
         res.render('erreur', {message : error.message, code : error.response.status});
     });
-   
+});
+
+app.get('/category/:teamId', async (req, res) => {
+    const teamId = req.params.teamId;
+    await axios.get(`http://localhost:3000/api/teams/${teamId}`).then(response => {
+        console.log(response.data.data.jerseys);
+       res.render('category', {jerseys: response.data.data.jerseys, team: response.data.data.team});
+    }).catch(error => {
+        res.render('erreur', {message : error.message, code : error.response.status});
+    });
 });
 
 app.get ('/favorite', (req, res) => {
