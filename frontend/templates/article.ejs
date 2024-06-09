@@ -29,72 +29,79 @@
             <a href="">VIEW ALL JERSEY up to -50%</a>
         </div>
     </header>
-        <div class="article">
-            <img src="http://localhost:3000/public/img/<%= jersey.image %>" alt="test">
-            <div class="buy">
-                <div class="buy-title">
-                    <h1>
-                        <%= jersey.name %>
-                    </h1>
-                </div>
-                <div class="stock">
-                    <button><box-icon name='heart' type='solid'></box-icon></button>
-                    <h3>in stock</h3>
-                </div>
-                <div class="box">
-                    <div class="size">
-                        <h2 class="t-size">Size</h2>
-                        <div class="taille">
-                            <button>S</button>
-                            <button>M</button>
-                            <button>L</button>
-                            <button>XL</button>
-                        </div>
+    <div class="article">
+        <img src="http://localhost:3000/public/img/<%= jersey.image %>" alt="test">
+        <div class="buy">
+            <div class="buy-title">
+                <h1>
+                    <%= jersey.name %>
+                </h1>
+            </div>
+            <div class="stock">
+                <button class="btn-fav"><box-icon name='heart' type='solid'></box-icon></button>
+                <h3>in stock</h3>
+            </div>
+            <div class="box">
+                <form action="" method="post" class="number" id="form-article">
+                <div class="size">
+                    <h2 class="t-size">Size</h2>
+                    <div class="taille">
+                        <fieldset id="taille">
+                            <input type="radio" id="s" value="s" name="s">
+                            <label for="s">S</label>
+                            <input type="radio" id="m" value="m" name="m">
+                            <label for="m">M</label>
+                            <input type="radio" id="l" value="l" name="l">
+                            <label for="l">L</label>
+                            <input type="radio" id="xl" value="xl" name="xl">
+                            <label for="xl">XL</label>
+                        </fieldset>
                     </div>
-                    <div class="quantity">
-                        <div class="little-box">
-                            <h2>Quantity</h2>
-                            <form action="" method="post" class="number">
-                                <label for="Quantity">quantity</label>
-                                <select name="Quantity" id="Quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </form>
-                        </div>
-                        <div class="add">
-                            <div class="button">
-                                <button id="btn-fav">Add to cart</button>
-                            </div>
+                </div>
+                <div class="quantity">
+                    <div class="little-box">
+                        <h2>Quantity</h2>
+                        <label for="Quantity">quantity</label>
+                        <select name="Quantity" id="Quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        </form>
+                    </div>
+                    <div class="add">
+                        <div class="button">
+                            <button id="btn-cart">Add to cart</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-            <footer>
-                <div class="category">
-                    <a href="/category"> Shop by team</a>
-                    <a href="/category">Men</a>
-                    <a href="/category">Women</a>
-                    <a href="/category">Kid</a>
-                </div>
-                <div class="real-footer">
-                    <div class="left-info">
-                        <a href="">Legal mention</a>
-                        <a href="">About us</a>
-                    </div>
-                    <div class="footer-logo">
-                        <img src="/public/img/logo 1.png" alt="">
-                    </div>
-                    <div class="right-info">
-                        <a href="">My account</a>
-                        <a href="">Cart</a>
-                    </div>
-                </div>
-            </footer>
-            <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    </div>
+    <footer>
+        <div class="category">
+            <a href="/category"> Shop by team</a>
+            <a href="/category">Men</a>
+            <a href="/category">Women</a>
+            <a href="/category">Kid</a>
+        </div>
+        <div class="real-footer">
+            <div class="left-info">
+                <a href="">Legal mention</a>
+                <a href="">About us</a>
+            </div>
+            <div class="footer-logo">
+                <img src="/public/img/logo 1.png" alt="">
+            </div>
+            <div class="right-info">
+                <a href="">My account</a>
+                <a href="">Cart</a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="/path/to/article.js"></script>
 </body>
 
 </html>
