@@ -29,38 +29,26 @@
         </div>
     </header>
     <div class="allbox">
-        <% jerseys.forEach(jersey => { %>
         <div class="box1">
             <h3>Your items</h3>
-            <div class="box2">
-                <img src="http://localhost:3000/public/img/<%= jersey.image %>" alt="Product Image">
-                <div>
-                    <h2><%= jersey.name %></h2>
-                    <h2><%= jersey.price %></h2>
-                </div>
-                <div>
-                    <p>Size:<%= jersey.size %></p>
-                        <input class="btn-delete" type="submit" value="Delete">
-                    </form>
-                </div>
-                <p></p>
+            <div class="jerseys__display">
+
             </div>
             <div class="box3">
                 <div class="order">
                     <h1>Order Summary</h1>
                     <div>
                         <p>Item Total</p>
-                        <p>$29.99</p>
+                        <p id="total__quantity"></p>
                     </div>
                     <div>
                         <p>Cart Total</p>
-                        <p>$29.99</p>
+                        <p id="total__price"></p>
                     </div>
                     <button>Checkout</button>
                 </div>
             </div>
         </div>
-        <% }) %>
     </div>
     <footer>
         <div class="category">

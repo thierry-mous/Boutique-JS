@@ -34,8 +34,7 @@ app.get('/nocart', (req, res) => {
 });
 
 app.get('/cart', (req, res) => {
-    const jerseys = JSON.parse(localStorage.getItem('jerseys'));
-    res.render('cart', {jerseys: jerseys});
+    res.render('cart');
 });
 
 
