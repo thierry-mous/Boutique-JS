@@ -22,43 +22,47 @@
             <a href="/category"> Shop by team</a>
             <a href="/category">Men</a>
             <a href="/category">Women</a>
-            <a href="/category">Kid</a>
         </div>
         <div class="reduc">
             <a href="">VIEW ALL JERSEY up to -50%</a>
         </div>
     </header>
     <h1>Our Jerseys</h1>
-                    <a href="/article">
-
-                        <div class="jersey-first-piece">
-                            <% jerseys.forEach(jersey => { %>
-                                <p><%= jersey.name %></p>
-                                <p><%= jersey.price %></p>
-                                <img src="http://localhost:3000/public/img/<%= jersey.image %>" alt="test">
+    <div class="shop-container">
+        <div class="jersey-content">
+            <div class="jersey-container">
+                <% jerseys.forEach(jersey => { %>
+                <a href="/article/<%= jersey.id_jersey %>">
+                    <div class="jersey-piece">
+                        <p><%= jersey.name %></p>
+                        <p><%= jersey.price %></p>
+                        <img src="http://localhost:3000/public/img/<%= jersey.image %>" alt="test">
                     </div>
-                    </a>
-    <footer>
-        <div class="category">
-            <a href="/category"> Shop by team</a>
-            <a href="/category">Men</a>
-            <a href="/category">Women</a>
-            <a href="/category">Kid</a>
-        </div>
-        <div class="real-footer">
-            <div class="left-info">
-                <a href="">Legal mention</a>
-                <a href="">About us</a>
-            </div>
-            <div class="footer-logo">
-                <img src="/public/img/logo 1.png" alt="">
-            </div>
-            <div class="right-info">
-                <a href="">My account</a>
-                <a href="">Cart</a>
+                </a>
+                <% }) %>
             </div>
         </div>
-    </footer>
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+        <footer>
+            <div class="category">
+                <a href="/category"> Shop by team</a>
+                <a href="/category">Men</a>
+                <a href="/category">Women</a>
+            </div>
+            <div class="real-footer">
+                <div class="left-info">
+                    <a href="">Legal mention</a>
+                    <a href="">About us</a>
+                </div>
+                <div class="footer-logo">
+                    <img src="/public/img/logo 1.png" alt="">
+                </div>
+                <div class="right-info">
+                    <a href="">My account</a>
+                    <a href="">Cart</a>
+                </div>
+            </div>
+        </footer>
+        <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    </div>
 </body>
 </html>

@@ -1,33 +1,19 @@
-let addToCartButtons = document.querySelectorAll('.button');
+document.getElementById('btn-cart').addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log('click');
+    const jerseyId = window.location.pathname.split('/').pop();
+    const quantity = document.getElementById('quantity').value;
+    const taille = document.querySelector('.taille input[name="taille"]:checked').value;
+    console.log(jerseyId, quantity, taille);
+    addToCart(jerseyId, quantity, taille);
+});
 
- addToCartButtons.forEach(button => {
-    button.addEventListener('click', function(event) {
-
-        let jerseyId = this.dataset.id;
-
-        addToCart(jerseyId);
-    });
-}); 
-
-document.querySelector( '#btn-get').addEventListener('click',() => {
-    getCart();
-})
-
-document.querySelector( '#btn-add').addEventListener('click',(event) => {
-    console.log(event.target.dataset.id);
-    addToCart(+event.target.dataset.id);
-})
-
-function addToCart(jerseyId) {
+function addToCart(jerseyId, quantity, taille) {
+    console.log('add to cart');
     let cart = localStorage.getItem('cart');
     cart = cart ? JSON.parse(cart) : [];
-    console.log(cart)
-    cart.push(jerseyId);
-    console.log(cart)
+    cart.push({jerseyId: jerseyId, quantity: quantity, taille: taille});
     localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Article ajouté au panier');
 }
 
-function getCart() {
-    let cart = localStorage.getItem('cart');
-    console.log(cart ? JSON.parse(cart) : []);
-}

@@ -22,7 +22,6 @@
             <a href="/category"> Shop by team</a>
             <a href="/category">Men</a>
             <a href="/category">Women</a>
-            <a href="/category">Kid</a>
         </div>
         <div class="reduc">
             <a href="">VIEW ALL JERSEY up to -50%</a>
@@ -31,44 +30,18 @@
     <div class="allbox">
         <div class="box1">
             <h3>Your items</h3>
-            <div class="box2">
-                <img src="/public/img/astro-jersey-men2.png" alt="Product Image">
-                <div>
-                    <h2>Maillot Title</h2>
-                    <h2>$29.99</h2>
-                </div>
-                <div>
-                    <form action="post">
-                        <label for="size">Size:</label>
-                        <select name="size" id="size">
-                            <option value="s">S</option>
-                            <option value="m">M</option>
-                            <option value="l">L</option>
-                            <option value="xl">XL</option>
-                        </select>
-                    </form>
-                    <form action="post">
-                        <label for="quantity">Quantity:</label>
-                        <select name="quantity" id="quantity">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                        <input class="btn-delete" type="submit" value="Delete">
-                    </form>
-                </div>
-                <p></p>
+            <div class="jerseys__display">
             </div>
             <div class="box3">
                 <div class="order">
                     <h1>Order Summary</h1>
                     <div>
                         <p>Item Total</p>
-                        <p>$29.99</p>
+                        <p id="total__quantity"></p>
                     </div>
                     <div>
                         <p>Cart Total</p>
-                        <p>$29.99</p>
+                        <p id="total__price"></p>
                     </div>
                     <button>Checkout</button>
                 </div>
@@ -80,7 +53,6 @@
             <a href="/category"> Shop by team</a>
             <a href="/category">Men</a>
             <a href="/category">Women</a>
-            <a href="/category">Kid</a>
         </div>
         <div class="real-footer">
             <div class="left-info">
@@ -97,6 +69,7 @@
         </div>
     </footer>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="/public/js/cart.js"></script>
 </body>
 
 </html>

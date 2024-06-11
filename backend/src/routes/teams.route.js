@@ -5,6 +5,8 @@ module.exports = (app) => {
 
     routeur.get('/teams', teams.getTeams);
 
+    routeur.get('/teams/:id', teams.getJersayByIdTeam);
+    
     app.use('/api', routeur);
 }
 

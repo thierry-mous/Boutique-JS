@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>article</title>
     <link rel="stylesheet" href="/public/css/style.css">
 </head>
+
 <body>
     <header>
         <div class="header-logo">
@@ -13,7 +15,7 @@
                 <a href="/"><img src="/public/img/logo 1.png" alt="logo baseball"></a>
             </div>
             <div class="information">
-                <a href="/nocart"></a><img src="/public/img/cart-icon 1.png" alt=""></a>
+                <a href="/cart"><img src="/public/img/cart-icon 1.png" alt=""></a>
                 <a href="/favorite"><img src="/public/img/favorite-icon 1.png" alt=""></a>
             </div>
         </div>
@@ -21,49 +23,55 @@
             <a href="/category"> Shop by team</a>
             <a href="/category">Men</a>
             <a href="/category">Women</a>
-            <a href="/category">Kid</a>
         </div>
         <div class="reduc">
             <a href="">VIEW ALL JERSEY up to -50%</a>
         </div>
     </header>
     <div class="article">
-        <img src="/public/img/astro-jersey-men2.png"
-            alt="">
+        <img src="http://localhost:3000/public/img/<%= jersey.image %>" alt="test">
         <div class="buy">
             <div class="buy-title">
-                <h1>Maillot Homme Houston Astros domicile 2024</h1>
+                <h1>
+                    <%= jersey.name %>
+                </h1>
             </div>
             <div class="stock">
-                <button><box-icon name='heart' type='solid' ></box-icon></button>
+                <button class="btn-fav"><box-icon name='heart' type='solid'></box-icon></button>
                 <h3>in stock</h3>
             </div>
             <div class="box">
+                <form action="" method="post" class="number" id="form-article">
                 <div class="size">
                     <h2 class="t-size">Size</h2>
                     <div class="taille">
-                        <button>S</button>
-                        <button>M</button>
-                        <button>L</button>
-                        <button>XL</button>
+                        <div class="taille">
+                            <input type="radio" name="taille" id="s" value="s">
+                            <label for="s">S</label>
+                            <input type="radio" name="taille" id="m" value="m">
+                            <label for="m">M</label>
+                            <input type="radio" name="taille" id="l" value="l">
+                            <label for="l">L</label>
+                            <input type="radio" name="taille" id="xl" value="xl">
+                            <label for="xl">XL</label>
+                        </div>
                     </div>
                 </div>
                 <div class="quantity">
                     <div class="little-box">
                         <h2>Quantity</h2>
-                        <form action="" method="post" class="number">
-                            <label for="Quantity">quantity</label>
-                            <select name="Quantity" id="Quantity">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
+                        <label for="Quantity">quantity</label>
+                        <select name="Quantity" id="quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
                         </form>
                     </div>
                     <div class="add">
                         <div class="button">
-                            <button id="btn-fav">Add to cart</button>
+                            <button id="btn-cart">Add to cart</button>
                         </div>
                     </div>
                 </div>
@@ -75,7 +83,6 @@
             <a href="/category"> Shop by team</a>
             <a href="/category">Men</a>
             <a href="/category">Women</a>
-            <a href="/category">Kid</a>
         </div>
         <div class="real-footer">
             <div class="left-info">
@@ -92,6 +99,7 @@
         </div>
     </footer>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="/public/js/article.js"></script>
 </body>
 
 </html>
