@@ -29,20 +29,15 @@
         </div>
     </header>
     <h1>Our Jerseys</h1>
-        <div class="shop-container">
-            <div class="jersey-content">
-                <div class="jersey-container">
                     <a href="/article">
-                        <div class="jersey-piece">
+
+                        <div class="jersey-first-piece">
                             <% jerseys.forEach(jersey => { %>
                                 <p><%= jersey.name %></p>
                                 <p><%= jersey.price %></p>
                                 <img src="http://localhost:3000/public/img/<%= jersey.image %>" alt="test">
-                            <%}) %>
                     </div>
                     </a>
-                </div>
-            </div>
     <footer>
         <div class="category">
             <a href="/category"> Shop by team</a>

@@ -5,8 +5,8 @@
 .jersey-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 20px;
+    width: 100%;
 }
 
 .jersey-piece {
@@ -14,18 +14,10 @@
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 20px;
-    width: 200px;
+    width: 30%;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.2); 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    backdrop-filter: blur(10px); 
+    background-color: rgba(255, 255, 255, 0.2);
     color: #000;
-}
-
-.jersey-piece:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(56, 54, 220, 0.534);
 }
 
 .jersey-piece img {
