@@ -3,7 +3,7 @@ document.getElementById('btn-cart').addEventListener('click', (event) => {
     console.log('click');
     const jerseyId = window.location.pathname.split('/').pop();
     const quantity = document.getElementById('quantity').value;
-    const taille = document.querySelector('.taille input[name="taille"]:checked').value;
+    document.querySelector('.taille input[name="taille"]:checked').value;
     console.log(jerseyId, quantity, taille);
     addToCart(jerseyId, quantity, taille);
 });
@@ -17,3 +17,18 @@ function addToCart(jerseyId, quantity, taille) {
     alert('Article ajouté au panier');
 }
 
+document.getElementById ('btn-fav').addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log('click');
+    const jerseyId = window.location.pathname.split('/').pop();
+    addToFav(jerseyId);
+});
+
+function addToFav(jerseyId) {
+    console.log('add to fav');
+    let fav = localStorage.getItem('fav');
+    fav = fav ? JSON.parse(fav) : [];
+    fav.push({jerseyId: jerseyId});
+    localStorage.setItem('fav', JSON.stringify(fav));
+    alert('Article ajouté aux favoris');
+}

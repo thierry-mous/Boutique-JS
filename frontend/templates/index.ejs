@@ -39,7 +39,8 @@
             </div>
             <div class="team-na">
                 <% teams.forEach(team => { %>
-                    > <a href="/category/<%= team.id_team%>"><img src="http://localhost:3000/public/img/<%= team.image %>" alt="logo équipe"></a>
+                     <a href="/category/<%= team.id_team%>"><img src="http://localhost:3000/public/img/<%= team.image %>" alt="logo équipe"></a>
+                    <% }) %>
             </div>
         </div>
         <div class="jersey">
