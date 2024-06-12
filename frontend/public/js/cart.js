@@ -43,3 +43,11 @@ function displayCart() {
     }
 }
 
+function getRandomJerseyIds(jerseyIds) {
+    let randomIds = [];
+    for(let i = 0; i < 3; i++) {
+        let randomIndex = Math.floor(Math.random() * jerseyIds.length);
+        randomIds.push(jerseyIds[randomIndex]);
+    }
+    return randomIds;
+}8
