@@ -15,10 +15,10 @@ function displayFav() {
                     jersey.classList.add('jersey');
                     jersey.innerHTML = `
                         <div class="box2">
-                        <img src="/public/img/${data.data.image}" alt="${data.data.name}" class="jersey__img">
+                        <img src="/public/img/${data.data.product.image}" alt="${data.data.product.name}" class="jersey__img">
                         <div class="jersey__info">
-                            <h3>${data.data.name}</h3>
-                            <p>Prix : ${data.data.price} €</p>
+                            <h3>${data.data.product.name}</h3>
+                            <p>Prix : ${data.data.product.price} €</p>
                         </div>
                         </div>
                     `;

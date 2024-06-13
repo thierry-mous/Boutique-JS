@@ -16,7 +16,8 @@ function displayCart() {
             fetch(`http://localhost:3000/api/jerseys/${element.jerseyId}`)
                 .then(response => response.json())
                 .then(data => {
-                    total += data.data.price * element.quantity;
+                    console.log(data);
+                    total += data.data.product.price * element.quantity;
                     totalPrice.innerHTML = `
                         <h2>Total : ${total.toFixed(2)} €</h2>
                     `;
@@ -27,10 +28,10 @@ function displayCart() {
                     jersey.classList.add('jersey');
                     jersey.innerHTML = `
                         <div class="box2">
-                        <img src="/public/img/${data.data.image}" alt="${data.data.name}" class="jersey__img">
+                        <img src="/public/img/${data.data.product.image}" alt="${data.data.product.name}" class="jersey__img">
                         <div class="jersey__info">
-                            <h3>${data.data.name}</h3>
-                            <p>Prix : ${(data.data.price * element.quantity).toFixed(2)} €</p> 
+                            <h3>${data.data.product.name}</h3>
+                            <p>Prix : ${(data.data.product.price * element.quantity).toFixed(2)} €</p> 
                             <p>Quantité : ${element.quantity}</p>
                             <p>Taille : ${element.taille}</p>
                         </div>
