@@ -334,3 +334,41 @@ footer {
 .descrptionWebSite{
     margin: 5vh;
 }
+
+.jersey-content {
+    margin-bottom: 20px;
+}
+
+.jersey-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.jersey-piece {
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #000;
+}
+
+.jersey-piece img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.a-maillot{
+    width: 30%;
+}

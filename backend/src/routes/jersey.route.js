@@ -8,5 +8,6 @@ module.exports = (app) => {
     routeur.get('/jerseys/:id', jersey.getJerseyById);
 
     app.use('/api', routeur);
+
 }
 

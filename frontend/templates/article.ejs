@@ -37,40 +37,66 @@
             </div>
             <div class="box">
                 <form action="" method="post" class="number" id="form-article">
-                <div class="size">
-                    <h2 class="t-size">Size</h2>
-                    <div class="taille">
+                    <div class="size">
+                        <h2 class="t-size">Size</h2>
                         <div class="taille">
-                            <input type="radio" name="taille" id="s" value="s">
-                            <label for="s">S</label>
-                            <input type="radio" name="taille" id="m" value="m">
-                            <label for="m">M</label>
-                            <input type="radio" name="taille" id="l" value="l">
-                            <label for="l">L</label>
-                            <input type="radio" name="taille" id="xl" value="xl">
-                            <label for="xl">XL</label>
+                            <div class="taille">
+                                <input type="radio" name="taille" id="s" value="s">
+                                <label for="s">S</label>
+                                <input type="radio" name="taille" id="m" value="m">
+                                <label for="m">M</label>
+                                <input type="radio" name="taille" id="l" value="l">
+                                <label for="l">L</label>
+                                <input type="radio" name="taille" id="xl" value="xl">
+                                <label for="xl">XL</label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="quantity">
-                    <div class="little-box">
-                        <h2>Quantity</h2>
-                        <label for="Quantity">quantity</label>
-                        <select name="Quantity" id="quantity">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                        </form>
-                    </div>
-                    <div class="add">
-                        <div class="button">
-                            <button id="btn-cart">Add to cart</button>
-                        </div>
-                    </div>
+                    <div class="quantity">
+                        <div class="little-box">
+                            <h2>Quantity</h2>
+                            <label for="Quantity">quantity</label>
+                            <select name="Quantity" id="quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                </form>
+            </div>
+            <div class="add">
+                <div class="button">
+                    <button id="btn-cart">Add to cart</button>
                 </div>
             </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="description">
+        <h2>Description</h2>
+        <p>
+            <%= jersey.description %>
+        </p>
+    </div>
+    <div class="jersey-container">
+        <h2 class="h1">Recommandation</h2>
+        <div class="article-all">
+            <% recommendations.forEach(recommendation=> { %>
+            <div class="box-article">
+                <a class="a-maillot" href="/article/<%= recommendation.id_jersey %>">
+                    <div class="jersey-piece">
+                        <p>
+                            <%= recommendation.name %>
+                        </p>
+                        <p>
+                            <%= recommendation.price %> €
+                        </p>
+                        <img src="http://localhost:3000/public/img/<%= recommendation.image %>" alt="test">
+                    </div>
+                </a>
+            </div>
+            <% }) %>
         </div>
     </div>
     <footer>

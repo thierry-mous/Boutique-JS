@@ -73,6 +73,23 @@ static getJerseysById(id, result) {
             result({ kind: 'not_found' }, null);
         });
     }
+ static getRecommendations(id) {
+        return new Promise((resolve, reject) => {
+            db.query(`SELECT * FROM jersey WHERE id_jersey != ${id} ORDER BY RAND() LIMIT 3`, (err, res) => {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                    return;
+                }
+                if (res.length) {
+                    resolve(res);
+                    return;
+                }
+                reject({ message: 'not_found' });
+            });
+        });
+    }
+
 }
 
 module.exports = ModeleJersey;

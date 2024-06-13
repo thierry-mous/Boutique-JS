@@ -42,7 +42,7 @@ app.get('/article/:jerseyId', async (req, res) => {
     const jerseyId = req.params.jerseyId;
     await axios.get(`http://localhost:3000/api/jerseys/${jerseyId}`).then(response => {
         console.log(response.data.data);
-        res.render('article', { jersey: response.data.data });
+        res.render('article', { jersey: response.data.data.product, recommendations: response.data.data.recommendations});
     }).catch(error => {
         res.render('erreur', { message: error.message, code: error.response.status });
     });
