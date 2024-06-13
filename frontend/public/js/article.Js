@@ -3,7 +3,7 @@ document.getElementById('btn-cart').addEventListener('click', (event) => {
     console.log('click');
     const jerseyId = window.location.pathname.split('/').pop();
     const quantity = document.getElementById('quantity').value;
-    document.querySelector('.taille input[name="taille"]:checked').value;
+     const taille = document.querySelector('.taille input[name="taille"]:checked').value;
     console.log(jerseyId, quantity, taille);
     addToCart(jerseyId, quantity, taille);
 });
