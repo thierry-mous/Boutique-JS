@@ -6,101 +6,89 @@
     <title>index</title>
     <link rel="stylesheet" href="/public/css/style.css">
     <script src="/public/js/index.js" defer></script>
-
 </head>
 
 <body>
-    <header>
-        <div class="header-logo">
-            <div class="logo">
-                <a href="/"><img src="/public/img/logo 1.png" alt="logo baseball"></a>
-            </div>
-            <div class="information">
-                <a href="/cart"><img src="/public/img/cart-icon 1.png" alt=""></a>
-                <a href="/favorite"><img src="/public/img/favorite-icon 1.png" alt=""></a>
-            </div>
+<header>
+    <div class="header-logo">
+        <div class="logo">
+            <a href="/"><img src="/public/img/logo 1.png" alt="logo baseball"></a>
         </div>
-        <div class="category">
-            <a href="/category"> Shop by team</a>
-            <a href="/category">Men</a>
-            <a href="/category">Women</a>
+        <div class="information">
+            <a href="/cart"><img src="/public/img/cart-icon 1.png" alt=""></a>
+            <a href="/favorite"><img src="/public/img/favorite-icon 1.png" alt=""></a>
         </div>
-        <div class="reduc">
-            <a href="">VIEW ALL JERSEY up to -50%</a>
+    </div>
+    <div class="category">
+        <a href="/category"> Shop by team</a>
+        <a href="/category">Men</a>
+        <a href="/category">Women</a>
+    </div>
+    <div class="reduc">
+        <a href="">VIEW ALL JERSEY up to -50%</a>
+    </div>
+</header>
+<div class="all-body">
+    <div class="welcome">
+        <h1>Welcome to FA’MOUS shop</h1>
+    </div>
+    <div class="american-league">
+        <div class="title-am">
+            <p>MLB Teams</p>
         </div>
-    </header>
-    <div class="all-body">
-        <div class="welcome">
-            <h1>Welcome to FA’MOUS shop</h1>
+        <div class="team-na">
+            <% teams.forEach(team => { %>
+                <a href="/category/<%= team.id_team%>"><img src="http://localhost:3000/public/img/<%= team.image %>" alt="logo équipe"></a>
+            <% }) %>
         </div>
-        <div class="american-league">
-            <div class="title-am">
-                <p>MLB Teams</p>
-            </div>
-            <div class="team-na">
-                <% teams.forEach(team => { %>
-                    > <a href="/category/<%= team.id_team%>"><img src="http://localhost:3000/public/img/<%= team.image %>" alt="logo équipe"></a>
-            </div>
+    </div>
+    <div class="jersey">
+        <div class="text">
+            <p>The MLB London Series 2024</p>
         </div>
-        <div class="jersey">
-            <div class="text">
-                <p>The MLB London Series 2024</p>
-            </div>
-            <div class="img1">
-                <a href="http://localhost:8080/category"> <img src="/public/img/banniere-mets-vs-phillies.jpg" alt=""></a>
-            </div>
-            <div class="img2">
-                <a href="/category/5"><img src="/public/img/mets-photo2.webp" alt=""></a>
-                <a href="/category/4"><img src="/public/img/phyli-photo2.gif" alt=""></a>
-            </div>
-            <div class="slider">
-                <div class="slides">
-                    <input type="radio" name="radio-btn" id="radio1">
-                    <input type="radio" name="radio-btn" id="radio2">
+        <div class="img1">
+            <a href="http://localhost:8080/category"> <img src="/public/img/banniere-mets-vs-phillies.jpg" alt=""></a>
+        </div>
+        <div class="img2">
+            <a href="/category/5"><img src="/public/img/mets-photo2.webp" alt=""></a>
+            <a href="/category/4"><img src="/public/img/phyli-photo2.gif" alt=""></a>
+        </div>
 
-                    <div class="slide first">
-                        <div id="slideOne" class="slide-content">
-                            <img src="/public/img/mets-banniere.png" alt="Mets Banniere">
-                        </div>
-                        <div id="slideSecond" class="slide-content">
-                            <img src="/public/img/phillies-baniere.png" alt="Phillies Banniere">
-                        </div>
-                    </div>
+        <div class="carousel-container">
+            <div class="slide">
+                <div class="slide-content">
+                    <img id="content-img1" src="/public/img/mets-banniere.png" alt="Mets Banniere">
                 </div>
-
-                <!--  <div class="navigation-auto">
-                      <div class="auto-btn1"></div>
-                      <div class="auto-btn2"></div>
-                  </div>
-
-                <div class="navigation-mannual">
-                    <label for="radio1" class="manual-btn"></label>
-                    <label for="radio2" class="manual-btn"></label>
-                </div>-->
+                <div class="slide-content">
+                    <img id="content-img2" src="/public/img/phillies-baniere.png" alt="Phillies Banniere">
+                </div>
             </div>
+        </div>
 
-            <footer>
-                <div class="category">
-                    <a href="/category"> Shop by team</a>
-                    <a href="/category">Men</a>
-                    <a href="/category">Women</a>
+        <div class="descrptionWebSite">
+           <h1>FA'MOUS shop: Baseball Jersey Lover </h1>
+            <p>FA'MOUS shop is the best place to buy baseball jersey. We have a large selection of baseball this sop has got you covered with everything you need to join in on the excitement from beginning and end of MLB season with the best selection of MLB merchandise and gear.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
+
+        <footer>
+            <div class="real-footer">
+                <div class="left-info">
+                    <a href="">Legal mention</a>
+                    <a href="">About us</a>
                 </div>
-                <div class="real-footer">
-                    <div class="left-info">
-                        <a href="">Legal mention</a>
-                        <a href="">About us</a>
-                    </div>
-                    <div class="footer-logo">
-                        <img src="/public/img/logo 1.png" alt="">
-                    </div>
-                    <div class="right-info">
-                        <a href="">My account</a>
-                        <a href="">Cart</a>
-                    </div>
+                <div class="footer-logo">
+                    <img src="/public/img/logo 1.png" alt="">
                 </div>
-            </footer>
+                <div class="right-info">
+                    <a href="">My account</a>
+                    <a href="">Cart</a>
+                </div>
+            </div>
+        </footer>
 
-            <script src="/public/js/index.js"></script>
-
+        <script src="/public/js/index.js"></script>
+    </div>
+</div>
 </body>
 </html>
