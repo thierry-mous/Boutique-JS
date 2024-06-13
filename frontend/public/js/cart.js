@@ -26,6 +26,7 @@ function displayCart() {
                     const jersey = document.createElement('div');
                     jersey.classList.add('jersey');
                     jersey.innerHTML = `
+                        <div class="box2">
                         <img src="/public/img/${data.data.image}" alt="${data.data.name}" class="jersey__img">
                         <div class="jersey__info">
                             <h3>${data.data.name}</h3>
@@ -33,6 +34,7 @@ function displayCart() {
                             <p>Quantité : ${element.quantity}</p>
                             <p>Taille : ${element.taille}</p>
                         </div>
+                        
                     `;
                     jerseysDisplay.appendChild(jersey);   
                 });
@@ -43,3 +45,11 @@ function displayCart() {
     }
 }
 
+function getRandomJerseyIds(jerseyIds) {
+    let randomIds = [];
+    for(let i = 0; i < 3; i++) {
+        let randomIndex = Math.floor(Math.random() * jerseyIds.length);
+        randomIds.push(jerseyIds[randomIndex]);
+    }
+    return randomIds;
+}8

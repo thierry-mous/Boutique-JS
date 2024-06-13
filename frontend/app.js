@@ -79,6 +79,10 @@ app.get ('/favorite', (req, res) => {
     res.render('fav');
 });
 
+app.get ('/payment', (req, res) => {
+    res.render('payment');
+});
+
 app.get ('/test', (req, res) => {
     res.sendFile(join(__dirname, '/templates/test.ejs'));
 });
