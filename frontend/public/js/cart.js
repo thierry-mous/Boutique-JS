@@ -11,19 +11,15 @@ function displayCart() {
     let totalQuantity = 0;
     if (cart) {
         cart = JSON.parse(cart);
-        cart.forEach(element => {
-            totalQuantity +=  parseInt(element.quantity);
+        cart.forEach((element, index) => {
+            totalQuantity += parseInt(element.quantity);
             fetch(`http://localhost:3000/api/jerseys/${element.jerseyId}`)
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
                     total += data.data.product.price * element.quantity;
-                    totalPrice.innerHTML = `
-                        <h2>Total : ${total.toFixed(2)} €</h2>
-                    `;
-                    totalQuantityText.innerHTML = `
-                        <p>${totalQuantity}</p>
-                    `;
+                    totalPrice.innerHTML = `<h2>Total : ${total.toFixed(2)} €</h2>`;
+                    totalQuantityText.innerHTML = `<p>${totalQuantity}</p>`;
                     const jersey = document.createElement('div');
                     jersey.classList.add('jersey');
                     jersey.innerHTML = `
@@ -35,17 +31,43 @@ function displayCart() {
                             <p>Quantité : ${element.quantity}</p>
                             <p>Taille : ${element.taille}</p>
                         </div>
-                        
+                        <div>
+                         <button class="delete" id="delete-${element.jerseyId}"> Delete </button>
+                        </div>
                     `;
-                    jerseysDisplay.appendChild(jersey);   
+                    jerseysDisplay.appendChild(jersey);
+
+                    
+                    document.getElementById(`delete-${element.jerseyId}`).addEventListener('click', function() {
+                      
+                        cart = cart.filter(item => item.jerseyId !== element.jerseyId);
+                        
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                       
+                        jerseysDisplay.removeChild(jersey);
+                    
+                        totalQuantity -= parseInt(element.quantity);
+
+                        total -= data.data.product.price * element.quantity;
+
+                        totalPrice.innerHTML = `<h2>Total : ${total.toFixed(2)} €</h2>`;
+
+                        totalQuantityText.innerHTML = `<p>${totalQuantity}</p>`;
+
+                        if (cart.length === 0) {
+                            localStorage.removeItem('cart');
+                            totalPrice.innerHTML = '';
+                            totalQuantityText.innerHTML = '';
+                        }
+
+                        
+                    });
                 });
-            
         });
     } else {
         console.log('Cart is empty');
     }
 }
-
 function getRandomJerseyIds(jerseyIds) {
     let randomIds = [];
     for(let i = 0; i < 3; i++) {
@@ -53,4 +75,4 @@ function getRandomJerseyIds(jerseyIds) {
         randomIds.push(jerseyIds[randomIndex]);
     }
     return randomIds;
-}8
+}

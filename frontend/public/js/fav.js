@@ -7,7 +7,7 @@ function displayFav() {
     let fav = localStorage.getItem('fav');
     if (fav) {
         fav = JSON.parse(fav);
-        fav.forEach(element => {
+        fav.forEach((element, index) => {
             fetch(`http://localhost:3000/api/jerseys/${element.jerseyId}`)
                 .then(response => response.json())
                 .then(data => {
@@ -20,12 +20,21 @@ function displayFav() {
                             <h3>${data.data.product.name}</h3>
                             <p>Prix : ${data.data.product.price} €</p>
                         </div>
+                        <div>
+                            <button class="delete-fav" id="delete-fav-${element.jerseyId}">Delete Fav</button>
+                        </div>
                         </div>
                     `;
                     jerseysDisplay.appendChild(jersey);
+
+                    document.getElementById(`delete-fav-${element.jerseyId}`).addEventListener('click', function() {
+                        fav = fav.filter(item => item.jerseyId !== element.jerseyId);
+                        localStorage.setItem('fav', JSON.stringify(fav));
+                        jerseysDisplay.removeChild(jersey);
+                    });
                 });
         });
     } else {
-        console.log('Fav is empty');
+        jerseysDisplay.innerHTML = '<h2>Aucun article en favoris</h2>';
     }
 }
