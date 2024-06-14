@@ -6,7 +6,6 @@
     width: 100%;
     max-width: 400px;
     margin: 20px auto;
-    
 }
 
 .payment-container h2 {
@@ -52,6 +51,25 @@
 }
 
 .form-group button:hover {
-    background-color: #bc0022;
+    background-color: #a3001c;
 }
 
+.suggestions {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.suggestions div {
+    padding: 10px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.suggestions div:hover {
+    background-color: #f2f2f2;
+}

@@ -29,3 +29,30 @@ document.getElementById('cvv').addEventListener('input', function (e) {
     }
     e.target.value = value;
 });
+
+
+document.getElementById('address').addEventListener('input', function(e) {
+    let value = e.target.value;
+    if (value.length > 2) {
+        fetch(`https://api-adresse.data.gouv.fr/search/?q=${value}`)
+            .then(response => response.json())
+            .then(data => {
+                let suggestions = document.getElementById('address-suggestions');
+                suggestions.innerHTML = '';
+                if (data.features && data.features.length > 0) {
+                    data.features.forEach(feature => {
+                        let suggestion = document.createElement('div');
+                        suggestion.textContent = feature.properties.label;
+                        suggestion.addEventListener('click', function() {
+                            document.getElementById('address').value = feature.properties.label;
+                            suggestions.innerHTML = '';
+                        });
+                        suggestions.appendChild(suggestion);
+                    });
+                } else {
+                    suggestions.innerHTML = 'Invalid address';
+                    document.getElementById('address-suggestions').innerHTML = 'Invalid address';
+                }
+            });
+    }
+});
