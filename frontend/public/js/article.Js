@@ -32,3 +32,29 @@ function addToFav(jerseyId) {
     localStorage.setItem('fav', JSON.stringify(fav));
     //alert('Article ajouté aux favoris');
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const descriptionElement = document.querySelector('.description p');
+    const originalDescription = descriptionElement.innerText;
+
+    if (originalDescription.length > 150) {
+        descriptionElement.innerText = originalDescription.substring(0, 150) + '...';
+
+        
+        const showMoreButton = document.createElement('button');
+        showMoreButton.innerText = 'Show More';
+        descriptionElement.parentNode.appendChild(showMoreButton); 
+
+       
+        showMoreButton.addEventListener('click', function() {
+            if (showMoreButton.innerText === 'Show More') {
+                descriptionElement.innerText = originalDescription;
+                showMoreButton.innerText = 'Show Less';
+            } else {
+                descriptionElement.innerText = originalDescription.substring(0, 150) + '...';
+                showMoreButton.innerText = 'Show More';
+            }
+        });
+    }
+});
