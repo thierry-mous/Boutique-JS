@@ -51,6 +51,23 @@ class ControllerJersey {
             return res.status(500).send({message: err.message || 'Some error occurred while retrieving jersey.' });
         });
     }
+    
+    static getOnlyMenJerseys(req, res) {
+        Jersey.getOnlyMenJerseys().then(data => {
+            res.json({response: 200, data: data});
+        }).catch(err => {
+            return res.status(500).send({message: err.message || 'Some error occurred while retrieving jersey.' });
+        });
+    }
+
+    static getOnlyWomenJerseys(req, res) {
+        Jersey.getOnlyWomenJerseys().then(data => {
+            res.json({response: 200, data: data});
+        }).catch(err => {
+            return res.status(500).send({message: err.message || 'Some error occurred while retrieving jersey.' });
+        });
+    }
+
 }
 
 module.exports = ControllerJersey;

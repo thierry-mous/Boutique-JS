@@ -14,7 +14,7 @@ class ModeleJersey {
 
     static getJerseys(id_jersey, result) {
         let sqlQuery = 'SELECT * FROM jersey';
-        
+
         console.log(id_jersey);
         if (id_jersey) {
             sqlQuery += ` WHERE id_jersey = ${id_jersey}`;
@@ -45,7 +45,7 @@ class ModeleJersey {
             });
         });
     }
-static getJerseysById(id, result) {
+    static getJerseysById(id, result) {
         return new Promise((resolve, reject) => {
             db.query(`SELECT * FROM jersey WHERE id_jersey = ${id}`, (err, res) => {
                 if (err) {
@@ -73,7 +73,7 @@ static getJerseysById(id, result) {
             result({ kind: 'not_found' }, null);
         });
     }
- static getRecommendations(id) {
+    static getRecommendations(id) {
         return new Promise((resolve, reject) => {
             db.query(`SELECT * FROM jersey WHERE id_jersey != ${id} ORDER BY RAND() LIMIT 3`, (err, res) => {
                 if (err) {
@@ -89,7 +89,41 @@ static getJerseysById(id, result) {
             });
         });
     }
+    static getOnlyMenJerseys() {
+        return new Promise((resolve, reject) => {
+            db.query(`SELECT * FROM jersey WHERE gender = '1'`, (err, res) => {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                    return;
+                }
+                if (res.length) {
+                    resolve(res);
+                    return;
+                }
+                reject({ message: 'not_found' });
+            });
+        });
+    }
+    
+    static getOnlyWomenJerseys() {
+                return new Promise((resolve, reject) => {
+            db.query(`SELECT * FROM jersey WHERE gender = '2'`, (err, res) => {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                    return;
+                }
+                if (res.length) {
+                    resolve(res);
+                    return;
+                }
+                reject({ message: 'not_found' });
+            });
+    });
+    }
 
 }
+
 
 module.exports = ModeleJersey;
