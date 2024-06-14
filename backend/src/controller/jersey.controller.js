@@ -52,22 +52,23 @@ class ControllerJersey {
         });
     }
     
-    static getOnlyMenJerseys(req, res) {
-        Jersey.getOnlyMenJerseys().then(data => {
+   static getGenderJersey(req, res) {
+        const id_gender = req.params.id
+        if (!id_gender || +id_gender <= 0 || isNaN(+id_gender)||!(1 <= id_gender & id_gender <= 2 ) ){
+            return res.status(400).send({response:400, message: 'Invalid id'});
+        }
+        Jersey.getGender(id_gender).then(data => {
             res.json({response: 200, data: data});
         }).catch(err => {
+            if (err.message == 'not_found') {
+                return res.status(404).send({response: 404, message: 'Jersey not found'});
+            }
             return res.status(500).send({message: err.message || 'Some error occurred while retrieving jersey.' });
         });
-    }
-
-    static getOnlyWomenJerseys(req, res) {
-        Jersey.getOnlyWomenJerseys().then(data => {
-            res.json({response: 200, data: data});
-        }).catch(err => {
-            return res.status(500).send({message: err.message || 'Some error occurred while retrieving jersey.' });
-        });
-    }
-
+   }
+            
+            
+   
 }
 
 module.exports = ControllerJersey;

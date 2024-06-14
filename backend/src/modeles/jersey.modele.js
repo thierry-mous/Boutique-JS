@@ -89,9 +89,9 @@ class ModeleJersey {
             });
         });
     }
-    static getOnlyMenJerseys() {
+   static getGender(gender, result) {
         return new Promise((resolve, reject) => {
-            db.query(`SELECT * FROM jersey WHERE gender = '1'`, (err, res) => {
+            db.query(`SELECT * FROM jersey WHERE gender = ${gender}`, (err, res) => {
                 if (err) {
                     console.log(err);
                     reject(err);
@@ -103,25 +103,10 @@ class ModeleJersey {
                 }
                 reject({ message: 'not_found' });
             });
+
         });
-    }
-    
-    static getOnlyWomenJerseys() {
-                return new Promise((resolve, reject) => {
-            db.query(`SELECT * FROM jersey WHERE gender = '2'`, (err, res) => {
-                if (err) {
-                    console.log(err);
-                    reject(err);
-                    return;
-                }
-                if (res.length) {
-                    resolve(res);
-                    return;
-                }
-                reject({ message: 'not_found' });
-            });
-    });
-    }
+
+   }
 
 }
 
