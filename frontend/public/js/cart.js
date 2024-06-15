@@ -60,7 +60,7 @@ function displayCart() {
                             totalQuantityText.innerHTML = '';
                         }
 
-                        
+
                     });
                 });
         });
@@ -76,3 +76,5 @@ function getRandomJerseyIds(jerseyIds) {
     }
     return randomIds;
 }
+
+

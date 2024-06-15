@@ -16,6 +16,8 @@ app.use(express.urlencoded({ extended: true }));
 
 require('./src/routes/teams.route')(app);
 require('./src/routes/jersey.route')(app);
+require('./src/routes/stock.route')(app);
+require('./src/routes/promo.route')(app);
 
 app.use('/public/', express.static(path.join(__dirname, 'public')));
 

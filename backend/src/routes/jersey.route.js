@@ -9,7 +9,8 @@ module.exports = (app) => {
 
     routeur.get('/jerseys/gender/:id', jersey.getGenderJersey);
 
-    app.use('/api', routeur);
+    
 
+    app.use('/api', routeur);
 }
 
