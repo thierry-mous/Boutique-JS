@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <title>command</title>
+    <link rel="stylesheet" href="/public/css/command.css">
     <link rel="stylesheet" href="/public/css/style.css">
-    <link rel="stylesheet" href="/public/css/nocart.css">
+    <script src="/public/js/index.js" defer></script>
+
 </head>
+
+<div class="container">
+    <div class="thank-you">Thank you for your order</div>
+    <div class="message">We will send it to you as soon as possible</div>
+    <div class="price">Total order price</div>
 
 <body>
     <header>
@@ -21,32 +27,17 @@
             </div>
         </div>
         <div class="category">
-            <a href=""> Shop by team</a>
-            <a href="">Men</a>
-            <a href="">Women</a>
-            <a href="">Kid</a>
+            <a href="/category"> Shop all teams</a>
+            <a href="/category/2">The MLB Champ</a>
+            <a href="/favorite">Fav</a>
         </div>
         <div class="reduc">
-            <a href="">VIEW ALL JERSEY up to -50%</a>
+            <p>PromoCode: PROMOMLBLONDON</p>
         </div>
     </header>
-    <div class="allbox">
-        <div class="box1">
-            <h3>Your items</h3>
-            <div class="box2">
-                <h2>Your Shopping Cart Is Empty</h2>
-                <button>Continue Shopping</button>
-            </div>
-        </div>
-    </div>
+     
 
     <footer>
-        <div class="category">
-            <a href=""> Shop by team</a>
-            <a href="">Men</a>
-            <a href="">Women</a>
-            <a href="">Kid</a>
-        </div>
         <div class="real-footer">
             <div class="left-info">
                 <a href="">Legal mention</a>
@@ -56,11 +47,12 @@
                 <img src="/public/img/logo 1.png" alt="">
             </div>
             <div class="right-info">
-                <a href="">My account</a>
-                <a href="">Cart</a>
+                <a href="/favorite">My fav</a>
+                <a href="/cart">Cart</a>
             </div>
         </div>
     </footer>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="/public/js/payment.js"></script>
 </body>
-
 </html>

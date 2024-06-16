@@ -87,6 +87,9 @@ app.get ('/test', (req, res) => {
     res.sendFile(join(__dirname, '/templates/test.ejs'));
 });
 
+app.get ('/command', (req, res) => {
+    res.render('command');
+});
 
 
 

@@ -23,18 +23,18 @@
         </div>
         <div class="category">
             <a href="/category"> Shop all teams</a>
-            <a href="/category">Men</a>
-            <a href="/category">Women</a>
+            <a href="/category/2">The MLB Champ</a>
+            <a href="/favorite">Fav</a>
         </div>
         <div class="reduc">
-            <a href="">VIEW ALL JERSEY up to -50%</a>
+            <p>PromoCode: PROMOMLBLONDON</p>
         </div>
     </header>
     <div class="article">
         <div class="swiper">
-            <!-- Additional required wrapper -->
+            
             <div class="swiper-wrapper">
-                <!-- Slides -->
+ 
                 <div class="swiper-slide"><img src="http://localhost:3000/public/img/<%= jersey.image %>" alt="test">
                 </div>
                 <div class="swiper-slide"><img src="http://localhost:3000/public/img/<%= jersey.image2 %>" alt="test">
@@ -42,10 +42,10 @@
                 <div class="swiper-slide"><img src="http://localhost:3000/public/img/<%= jersey.image3 %>" alt="test">
                 </div>
             </div>
-            <!-- If we need pagination -->
+    
             <div class="swiper-pagination"></div>
 
-            <!-- If we need navigation buttons -->
+   
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
 
@@ -147,22 +147,21 @@
 
 
         const swiper = new Swiper('.swiper', {
-            // Optional parameters
+    
             direction: 'horizontal',
             loop: true,
 
-            // If we need pagination
+       
             pagination: {
                 el: '.swiper-pagination',
             },
 
-            // Navigation arrows
+        
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
 
-            // And if we need scrollbar
             scrollbar: {
                 el: '.swiper-scrollbar',
             },
