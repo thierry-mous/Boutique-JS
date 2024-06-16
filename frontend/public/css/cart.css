@@ -77,7 +77,7 @@ body {
 }
 
 
-.btn-delete{
+.delete{
     background-color: #9b0a0a;
     color: white;
     border: none;
@@ -87,6 +87,15 @@ body {
     font-size: 16px;
     margin-left: 30px;
 }
+
+.delete-fav{background-color: #9b0a0a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 30px;}
 
 .btn-cart{ background-color: #9b0a0a;
     color: white;

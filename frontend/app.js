@@ -91,8 +91,13 @@ app.get ('/command', (req, res) => {
     res.render('command');
 });
 
+app.get ('/legal', (req, res) => {
+    res.render('legal');
+});
 
-
+app.get ('/about', (req, res) => {
+    res.render('about');
+});
 
 const PORT = process.env.PORT || 8080;
 

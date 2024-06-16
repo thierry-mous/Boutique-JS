@@ -109,5 +109,6 @@ button.addEventListener('click', function() {
    
     
    localStorage.setItem('cart', JSON.stringify([]));
+   window.location.href = "/command.ejs";
 
 });
