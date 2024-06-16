@@ -73,3 +73,12 @@
 .suggestions div:hover {
     background-color: #f2f2f2;
 }
+
+@font-face {
+    font-family: myFont;
+    src: url(Playball-Regular.ttf);
+}
+
+*{
+    font-family: myFont;
+}

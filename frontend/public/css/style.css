@@ -372,3 +372,12 @@ footer {
 .a-maillot{
     width: 30%;
 }
+
+@font-face {
+    font-family: myFont;
+    src: url(Playball-Regular.ttf);
+}
+
+*{
+    font-family: myFont;
+}

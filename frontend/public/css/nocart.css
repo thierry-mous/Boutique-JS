@@ -37,3 +37,12 @@
    justify-content: center;
     align-items: center;
 }
+
+@font-face {
+    font-family: myFont;
+    src: url(Playball-Regular.ttf);
+}
+
+*{
+    font-family: myFont;
+}

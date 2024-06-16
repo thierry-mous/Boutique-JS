@@ -96,3 +96,12 @@ body {
     cursor: pointer;
     font-size: 16px;
     margin-left: 30px;}
+
+    @font-face {
+        font-family: myFont;
+        src: url(Playball-Regular.ttf);
+    }
+    
+    *{
+        font-family: myFont;
+    }
