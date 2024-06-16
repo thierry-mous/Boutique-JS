@@ -50,3 +50,8 @@ button{background-color: #9b0a0a;
     cursor: pointer;
     font-size: 16px;
     margin-left: 30px;}
+
+    .swiper {
+        width: 600px;
+        height: 500px;
+      }

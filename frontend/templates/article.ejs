@@ -20,18 +20,36 @@
                 <a href="/favorite"><img src="/public/img/favorite-icon 1.png" alt=""></a>
             </div>
         </div>
-    </div>
+        </div>
         <div class="category">
-        <a href="/category"> Shop all teams</a>
-        <a href="/category">Men</a>
-        <a href="/category">Women</a>
-    </div>
+            <a href="/category"> Shop all teams</a>
+            <a href="/category">Men</a>
+            <a href="/category">Women</a>
+        </div>
         <div class="reduc">
             <a href="">VIEW ALL JERSEY up to -50%</a>
         </div>
     </header>
     <div class="article">
-        <img src="http://localhost:3000/public/img/<%= jersey.image %>" alt="test">
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><img src="http://localhost:3000/public/img/<%= jersey.image %>" alt="test">
+                </div>
+                <div class="swiper-slide"><img src="http://localhost:3000/public/img/<%= jersey.image2 %>" alt="test">
+                </div>
+                <div class="swiper-slide"><img src="http://localhost:3000/public/img/<%= jersey.image3 %>" alt="test">
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+        </div>
         <div class="buy">
             <div class="buy-title">
                 <h1>
@@ -82,26 +100,28 @@
     </div>
     <div class="description">
         <h2>Description</h2>
-        <p id="description-text"><%= jersey.description %></p>
+        <p id="description-text">
+            <%= jersey.description %>
+        </p>
     </div>
     <div class="jersey-container">
         <h2 class="h1">Recommandation</h2>
         <div class="article-all">
             <% recommendations.forEach(recommendation=> { %>
-            <div class="box-article">
-                <a class="a-maillot" href="/article/<%= recommendation.id_jersey %>">
-                    <div class="jersey-piece">
-                        <p>
-                            <%= recommendation.name %>
-                        </p>
-                        <p>
-                            <%= recommendation.price %> €
-                        </p>
-                        <img src="http://localhost:3000/public/img/<%= recommendation.image %>" alt="test">
-                    </div>
-                </a>
-            </div>
-            <% }) %>
+                <div class="box-article">
+                    <a class="a-maillot" href="/article/<%= recommendation.id_jersey %>">
+                        <div class="jersey-piece">
+                            <p>
+                                <%= recommendation.name %>
+                            </p>
+                            <p>
+                                <%= recommendation.price %> €
+                            </p>
+                            <img src="http://localhost:3000/public/img/<%= recommendation.image %>" alt="test">
+                        </div>
+                    </a>
+                </div>
+                <% }) %>
         </div>
     </div>
     <footer>
@@ -121,6 +141,33 @@
     </footer>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="/public/js/article.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script type="module">
+        import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+
+
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+    </script>
 </body>
 
 </html>
