@@ -1,3 +1,9 @@
+CREATE DATABASE famous_bdd
+DEFAULT CHARACTER SET latin1
+DEFAULT COLLATE latin1_bin;
+
+use famous_bdd;
+
 CREATE TABLE `Team` (
                         id_team INT PRIMARY KEY,
                         city VARCHAR(100) NOT NULL,

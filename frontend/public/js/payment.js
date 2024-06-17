@@ -105,10 +105,78 @@ button.addEventListener('click', function() {
             }
 
         });
-
-   
-    
    localStorage.setItem('cart', JSON.stringify([]));
-   window.location.href = "/command.ejs";
+       window.location.href = '/command';
 
 });
+
+
+/*
+button.addEventListener('click', function() {
+    const size_id = {
+        's': 1,
+        'm': 2,
+        'l': 3,
+        "xl": 4,
+    };
+    const cart = JSON.parse(localStorage.getItem('cart'));
+
+    // Tableau pour stocker toutes les promesses des appels fetch
+    const fetchPromises = [];
+
+    cart.forEach(jersey => {
+        console.log(jersey.jerseyId, jersey.quantity, jersey.taille);
+        const stockPromise = fetch('http://localhost:3000/api/stock', {
+            method: 'put',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id_jersey: jersey.jerseyId,
+                quantity: jersey.quantity,
+                id_size: size_id[jersey.taille]
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        });
+
+        // Ajouter la promesse à l'array
+        fetchPromises.push(stockPromise);
+    });
+
+    const promo_code = document.getElementById('promo_code').value;
+    console.log(promo_code);
+
+    const promoPromise = fetch('http://localhost:3000/api/promo', {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            code: promo_code
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.length > 0) {
+            const promo = data[0];
+            console.log(promo.discount);
+        } else {
+            console.log('Promo code not found');
+        }
+    });
+
+    // Ajouter la promesse à l'array
+    fetchPromises.push(promoPromise);
+
+    // Attendre que toutes les promesses soient terminées avant de continuer
+    Promise.all(fetchPromises).then(() => {
+        localStorage.setItem('cart', JSON.stringify([]));
+        window.location.href = '/command';
+    }).catch(error => {
+        console.error('Error processing requests:', error);
+    });
+});
+*/
